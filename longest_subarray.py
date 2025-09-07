@@ -1,0 +1,38 @@
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+# Function to check if pair
+# with given sum exists
+"""
+Given an array arr[] of size n containing integers, the task is to find the length of the longest subarray having sum equal to the given value k.
+
+Note: If there is no subarray with sum equal to k, return 0.
+
+Examples: 
+
+Input: arr[] = [10, 5, 2, 7, 1, -10], k = 15
+Output: 6
+Explanation: Subarrays with sum = 15 are [5, 2, 7, 1], [10, 5] and [10, 5, 2, 7, 1, -10]. The length of the longest subarray with a sum of 15 is 6.
+
+Input: arr[] = [-5, 8, -14, 2, 4, 12], k = -5
+Output: 5
+Explanation: Only subarray with sum = 15 is [-5, 8, -14, 2, 4] of length 5.
+
+Input: arr[] = [10, -10, 20, 30], k = 5
+Output: 0
+Explanation: No subarray with sum = 5 is present in arr[].
+"""
+
+
+def shift_pointer(arr,k):
+    length_array=len(arr)
+    start=0
+    for i in range(length_array):
+        end=i
+        if (sum(arr[start:end])==k):
+            result=len(arr[start:end])
+        else:
+            result=0
+    return result
+
+print(shift_pointer(arr=[-5, 8, -14, 2, 4, 12], k = -5))
+print(shift_pointer(arr=[10, -10, 20, 30], k = 5))
